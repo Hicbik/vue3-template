@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue"
+
+const click = () => {
+  alert("ok")
+}
 </script>
 
 <template>
@@ -14,7 +18,7 @@ import HelloWorld from "./components/HelloWorld.vue"
 
   <router-view />
 
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue" @click="click" />
 </template>
 
 <style scoped>

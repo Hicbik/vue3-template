@@ -3,6 +3,7 @@ import { onMounted, onUnmounted, onRenderTriggered, reactive, watch, ref } from 
 import { useCommStore } from "../store/commStore"
 
 defineProps<{ msg: string }>()
+const emits = defineEmits(["click"])
 
 const commStore = useCommStore()
 
@@ -46,7 +47,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 @click="emits('click')" class="text-orange-900">{{ msg }}</h1>
 
   <div ref="dom" class="card">
     <button type="button" @click="addCount">count is {{ state.count }}</button>
